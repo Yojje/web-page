@@ -1,32 +1,39 @@
 import { Header } from "@/components/Header";
 import { YogaCard } from "@/components/YogaCard";
-import { InstructorCard } from "@/components/InstructorCard";
+import { Card, CardContent } from "@/components/ui/card";
+import { MessageCircle, Users, Calendar, Star, Globe, BookOpen } from "lucide-react";
 
 const Index = () => {
-  const instructors = [
+  const features = [
     {
-      name: "Sarah Johnson",
-      specialties: ["Hatha Yoga", "Meditation", "Breathing Techniques"],
-      experience: "8 years",
-      rating: 4.9,
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      price: "$45/hour"
+      icon: <Users className="w-12 h-12 text-primary" />,
+      title: "Expert Instructors Marketplace",
+      description: "Connect with certified yoga instructors worldwide. Browse through detailed profiles, read reviews, and find the perfect teacher for your practice style."
     },
     {
-      name: "David Chen",
-      specialties: ["Vinyasa Flow", "Power Yoga", "Flexibility"],
-      experience: "12 years",
-      rating: 4.8,
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-      price: "$50/hour"
+      icon: <Calendar className="w-12 h-12 text-primary" />,
+      title: "Flexible Class Scheduling",
+      description: "Book private or group sessions that fit your schedule. Choose from various time slots and customize your learning journey."
     },
     {
-      name: "Maya Patel",
-      specialties: ["Ashtanga", "Prenatal Yoga", "Mindfulness"],
-      experience: "10 years",
-      rating: 4.9,
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-      price: "$48/hour"
+      icon: <MessageCircle className="w-12 h-12 text-primary" />,
+      title: "Vibrant Community",
+      description: "Join our growing community of yoga enthusiasts. Create or join topic-specific servers, share experiences, and connect with like-minded practitioners."
+    },
+    {
+      icon: <Star className="w-12 h-12 text-primary" />,
+      title: "Personalized Experience",
+      description: "Get individual attention from instructors who understand your goals. Whether you're a beginner or advanced practitioner, find classes that match your level."
+    },
+    {
+      icon: <Globe className="w-12 h-12 text-primary" />,
+      title: "Global Reach",
+      description: "Access yoga instruction from different cultures and traditions. Learn various styles and approaches from teachers around the world."
+    },
+    {
+      icon: <BookOpen className="w-12 h-12 text-primary" />,
+      title: "Knowledge Sharing",
+      description: "Participate in discussions, share insights, and learn from the community. Access resources and tips from experienced practitioners."
     }
   ];
 
@@ -46,35 +53,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Instructors */}
-      <section className="py-12 px-4" id="instructors">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Instructors</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {instructors.map((instructor, index) => (
-              <InstructorCard key={index} {...instructor} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
-      <section className="py-12 px-4 bg-gray-50" id="features">
+      <section className="py-12 px-4 bg-gray-50">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Why Choose Yoje</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4">Expert Instructors</h3>
-              <p className="text-gray-600">Learn from certified yoga teachers with years of experience.</p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4">Flexible Scheduling</h3>
-              <p className="text-gray-600">Book classes that fit your schedule and timezone.</p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-4">Personalized Practice</h3>
-              <p className="text-gray-600">Get individual attention and customize your yoga journey.</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <div className="mb-6 flex justify-center">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
