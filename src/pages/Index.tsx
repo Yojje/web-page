@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Index = () => {
   const features = [
@@ -60,6 +61,100 @@ const Index = () => {
       avatar: "ED"
     }
   ];
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validate = () => {
+    let valid = true;
+    let newErrors = {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    };
+
+    if (!formData.name) {
+      newErrors.name = "Name is required";
+      valid = false;
+    }
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+      valid = false;
+    }
+
+    if (!formData.message) {
+      newErrors.message = "Message is required";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+    // Clear error when user starts typing
+    if (errors[id as keyof typeof errors]) {
+      setErrors(prev => ({
+        ...prev,
+        [id]: ""
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+  
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/xrbgjrbw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+  
+      if (response.ok) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+        alert('Message sent successfully!');
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };  
 
   return (
     <div className="min-h-screen bg-background">
@@ -203,33 +298,69 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-8">Get in Touch</h2>
           <Card>
             <CardContent className="p-6">
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">Name</label>
                   <div className="relative">
                     <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                    <Input id="name" className="pl-10" placeholder="Your name" />
+                    <Input 
+                      id="name" 
+                      className="pl-10" 
+                      placeholder="Your name" 
+                      value={formData.name}
+                      onChange={handleInputChange}
+                    />
+                    {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                   </div>
                 </div>
+
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">Email</label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                    <Input id="email" type="email" className="pl-10" placeholder="Your email" />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      className="pl-10" 
+                      placeholder="Your email" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                    />
+                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                   </div>
                 </div>
+
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium">Phone</label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                    <Input id="phone" type="tel" className="pl-10" placeholder="Your phone number" />
+                    <Input 
+                      id="phone" 
+                      type="tel" 
+                      className="pl-10" 
+                      placeholder="Your phone number" 
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                    />
+                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                   </div>
                 </div>
+
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">Message</label>
-                  <Textarea id="message" placeholder="Your message" className="min-h-[120px]" />
+                  <Textarea 
+                    id="message" 
+                    placeholder="Your message" 
+                    className="min-h-[120px]" 
+                    value={formData.message}
+                    onChange={handleInputChange}
+                  />
+                  {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                 </div>
-                <Button className="w-full">Send Message</Button>
+
+                <Button className="w-full" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </Button>
               </form>
             </CardContent>
           </Card>
