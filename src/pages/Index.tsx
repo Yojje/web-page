@@ -1,5 +1,4 @@
 import { Header } from "@/components/Header";
-import { YogaCard } from "@/components/YogaCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Users, Calendar, Star, Globe, BookOpen } from "lucide-react";
 
@@ -44,9 +43,12 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-4 md:pt-32 md:pb-20">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-            Find Your Perfect Yoga Instructor
+          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4">
+            Yoje
           </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-6">
+            कुछ खुद के लिए हो जाए
+          </p>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Connect with expert yoga instructors worldwide and transform your practice with personalized guidance.
           </p>
