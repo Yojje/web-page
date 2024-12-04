@@ -1,9 +1,10 @@
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageCircle, Users, Calendar, Star, Globe, BookOpen, Mail, Phone, User } from "lucide-react";
+import { MessageCircle, Users, Calendar, Star, Globe, BookOpen, Mail, Phone, User, Brain, Cpu } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const features = [
@@ -67,15 +68,63 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-4 md:pt-32 md:pb-20">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4 animate-fade-up">
             Yoje
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-6">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-6 animate-fade-up">
             A better you
           </p>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-up">
             Connect with expert yoga instructors worldwide and transform your practice with personalized guidance.
           </p>
+        </div>
+      </section>
+
+      {/* AI Technology Highlight Section */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                Powered by Advanced AI Technology
+              </h2>
+              <p className="text-lg text-gray-600">
+                Experience yoga like never before with our cutting-edge machine learning and pose detection technology. 
+                Get real-time feedback on your poses and personalized guidance for improvement.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Brain className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold">Real-time Pose Detection</h3>
+                    <p className="text-gray-600">Instant analysis of your yoga poses with millisecond precision</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Cpu className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold">Custom ML Models</h3>
+                    <p className="text-gray-600">Developed in-house for accurate and instant feedback</p>
+                  </div>
+                </div>
+              </div>
+              <Link to="/ai-technology">
+                <Button size="lg" className="mt-4">
+                  Learn More About Our Technology
+                </Button>
+              </Link>
+            </div>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b"
+                alt="AI Yoga Analysis"
+                className="rounded-lg shadow-xl hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute -bottom-4 -right-4 bg-primary text-white px-6 py-3 rounded-lg shadow-lg">
+                Real-time Analysis
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
