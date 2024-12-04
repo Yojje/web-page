@@ -1,6 +1,9 @@
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageCircle, Users, Calendar, Star, Globe, BookOpen } from "lucide-react";
+import { MessageCircle, Users, Calendar, Star, Globe, BookOpen, Mail, Phone, User } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const features = [
@@ -36,6 +39,27 @@ const Index = () => {
     }
   ];
 
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "Yoga Enthusiast",
+      quote: "Yoje has transformed my yoga practice. The instructors are amazing!",
+      avatar: "SJ"
+    },
+    {
+      name: "Michael Chen",
+      role: "Student",
+      quote: "The personalized attention from instructors has helped me grow tremendously.",
+      avatar: "MC"
+    },
+    {
+      name: "Emma Davis",
+      role: "Professional",
+      quote: "Flexible scheduling makes it easy to maintain my practice despite a busy schedule.",
+      avatar: "ED"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -47,11 +71,31 @@ const Index = () => {
             Yoje
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-            कुछ खुद के लिए हो जाए
+            A better you
           </p>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Connect with expert yoga instructors worldwide and transform your practice with personalized guidance.
           </p>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <h3 className="text-4xl font-bold text-primary mb-2">500+</h3>
+              <p className="text-gray-600">Certified Instructors</p>
+            </div>
+            <div className="p-6">
+              <h3 className="text-4xl font-bold text-primary mb-2">10,000+</h3>
+              <p className="text-gray-600">Active Students</p>
+            </div>
+            <div className="p-6">
+              <h3 className="text-4xl font-bold text-primary mb-2">50+</h3>
+              <p className="text-gray-600">Countries</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -76,6 +120,70 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-12 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-semibold">
+                      {testimonial.avatar}
+                    </div>
+                    <div className="ml-4">
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 italic">{testimonial.quote}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-12 px-4 bg-secondary/30">
+        <div className="container mx-auto max-w-2xl">
+          <h2 className="text-3xl font-bold text-center mb-8">Get in Touch</h2>
+          <Card>
+            <CardContent className="p-6">
+              <form className="space-y-6">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-medium">Name</label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Input id="name" className="pl-10" placeholder="Your name" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium">Email</label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Input id="email" type="email" className="pl-10" placeholder="Your email" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="text-sm font-medium">Phone</label>
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <Input id="phone" type="tel" className="pl-10" placeholder="Your phone number" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium">Message</label>
+                  <Textarea id="message" placeholder="Your message" className="min-h-[120px]" />
+                </div>
+                <Button className="w-full">Send Message</Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
