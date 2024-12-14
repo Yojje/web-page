@@ -33,7 +33,7 @@ const Hero = () => {
 
   return (
     <div className="main relative w-full h-[150vh] sm:h-[270vh]">
-      <span className="absolute scroll-down hidden sm:block z-[2] right-[10vh] top-[87vh] text-white text-sm">
+      <span className="absolute scroll-down hidden sm:block z-[2] right-[10vh] top-[87vh] text-white text-lg font-semibold">
         Scroll to explore
       </span>
       <div className="picture w-full h-full overflow-hidden bg-black">
