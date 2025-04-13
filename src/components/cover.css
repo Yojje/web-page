@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Philosopher&display=swap');
+@font-face {
+    font-family: domaine;
+    src: url(/src/assets/font/Domaine\ Sans\ Fine\ Regular\ Regular.woff);
+}
+
+.cover-head-vid {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 6rem;
+    color: white;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.2rem;
+}
+
+.vr {
+    background-color: rgb(248, 236, 219);
+}
+
+@media (max-width: 768px) {
+  .cover-head-vid {
+    font-size: 4rem;
+  }
+}
