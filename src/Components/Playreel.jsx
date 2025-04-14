@@ -27,7 +27,7 @@ const Playreel = () => {
   
   
   return (
-    <div className="play-reel overflow-hidden relative w-full h-screen overflow-hidden bg-black">
+    <div className="play-reel relative w-full h-screen overflow-hidden bg-black">
       <div className="video-div w-48 sm:w-80 sm:h-44 h-28 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="absolute h-full w-full bg-black/70 scale-[1.01]">
           <svg

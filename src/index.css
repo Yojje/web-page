@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Special+Gothic+Expanded+One&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body::-webkit-scrollbar {display: none;}
+.blurred-circle {
+    transition: transform 0.1s ease-out;
+}

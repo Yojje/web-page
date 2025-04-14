@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className="w-full fixed z-[999]">
       <div className="max-w-screen-3xl mx-auto p-5 sm:p-10 flex justify-between items-center text-white">
         <div className="logo overflow-hidden">
-          <svg
+          {/* <svg
             viewBox="0 0 95 25"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,10 @@ const Navbar = () => {
               fill="currentColor"
               data-v-1932cced=""
             ></path>
-          </svg>
+          </svg> */}
+          <div className="flex flex-row text-4xl h-16">
+            <h1 className="font-gilda font-light tracking-tight">YOJE</h1>
+          </div>
         </div>
 
         <div className="toggler sm:hidden space-y-[3px]">

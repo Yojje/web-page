@@ -47,47 +47,24 @@ const Hero = () => {
       </div>
 
       <div className="absolute w-full top-0 left-0">
-        <div className="text text-white max-w-screen-3xl mx-auto h-full px-5 sm:px-32">
-          <div className="para mt-72 sm:mt-[27rem]">
-            {[
-              " Global digital design studio partnering ",
-              "with brands and businesses that create ",
-              "exceptional experiences where people ",
-              "live, work, and unwind. ",
-            ].map((item) => (
-              <p
-                className="font-medium overflow-hidden text-lg sm:text-3xl leading-[2rem]"
-                key={item}
-              >
-                <span className="block">{item}</span>
-              </p>
-            ))}
-          </div>
+        <div className="text text-white max-w-screen-3xl mx-auto h-full px-5 sm:px-12 pt-24">
 
-          <div className="headings mt-5 sm:mt-12">
+          {/* <div className="headings mt-5 sm:mt-12">
             {["Digital", "Design", "Experience"].map((item) => (
               <h1
-                className="text-5xl overflow-hidden sm:text-[16rem] sm:tracking-tighter tracking-tight leading-[1.15]"
+                className="text-8xl sm:tracking-tighter tracking-tight leading-[1.4] overflow-hidden"
                 key={item}
               >
                 <span className="block">{item}</span>
               </h1>
             ))}
-          </div>
+          </div> */}
 
-          <div className="scroll-down mt-10 sm:hidden">
-            <svg
-              className="size-4 rotate-90"
-              viewBox="0 0 11 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </div>
+			<div className="headings mt-52 lg-mt-32 flex flex-col text-white tracking-tight font-gothic font-light sm-text-md text-[clamp(2rem,10vw,13rem)]">
+				<h1 className=" leading-10">Digital</h1>
+				<h1 className="leading-sung">Design</h1>
+				<h1 className="pb-2 leading-10">Experience</h1>
+			</div>
 
           <div className="mt-20 sm:mt-32">
             <p className="font-medium text-lg sm:text-2xl sm:w-1/2 leading-[1.5rem]">

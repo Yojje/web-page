@@ -7,12 +7,14 @@ import Images from "./Components/Images";
 import Spread from "./Spread";
 import Story from "./Components/Story";
 import LocomotiveScroll from "locomotive-scroll";
+import BlurredCircle from "./Components/BlurredCircle";
 
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
 
   return (
     <div>
+      <BlurredCircle/>
       <Navbar />
       <Hero />
       <Work />

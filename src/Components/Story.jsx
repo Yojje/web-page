@@ -2,7 +2,7 @@ import React from "react";
 
 const Story = () => {
   return (
-    <div className="overflow-hidden h-[85vh] sm:h-screen">
+    <div className="overflow-hidden h-full sm:h-screen">
       <div data-scroll data-scroll-speed="-0.5" className="relative w-full flex items-center overflow-hidden h-[85vh] sm:h-screen  bg-[#070707] text-[#e0ccbb]">
         <div className="video-container absolute top-0 right-0 h-1/2 w-2/3 sm:w-3/5 flex items-center">
           <video
