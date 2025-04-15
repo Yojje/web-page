@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        gothic: ['Special Gothic Expanded One', 'sans-serif'],
+        quicksand: ['Quicksand', 'sans-serif'],
         gilda: ['Gilda Display', 'serif'],
+        gothic: ['Special Gothic', 'sans-serif'],
       }
     },
   },
