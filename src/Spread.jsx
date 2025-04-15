@@ -22,7 +22,7 @@ const Spread = () => {
         <div className="text text-center mt-7 pb-24">
             <h1 className="text-6xl sm:text-[9rem] tracking-tighter">Spread</h1>
             <h1 className="text-6xl sm:text-[9rem] tracking-tighter">the News</h1>
-            <p className="text-lg sm:text-2xl sm:mt-10 mt-6 leading-[1.5rem] w-2/3 mx-auto">Find out more about our work on these leading design and technology platforms.</p>
+            <p className="text-lg sm:text-2xl sm:mt-10 mt-6 leading-[1.5rem] w-2/3 mx-auto">Find out more about our work on these leading healthy and technology platforms.</p>
             <a className="border-b border-b-zinc-400 mt-5 sm:mt-10 inline-block" href="#">Browse all news</a>
         </div>
       </div>

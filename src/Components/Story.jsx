@@ -20,8 +20,8 @@ const Story = () => {
               <h1 className="text-6xl sm:text-[9rem] sm:tracking-tighter">Story</h1>
             </div>
             <p className="text-lg sm:opacity-90 sm:text-2xl sm:w-1/2 leading-[1.5rem]">
-              The story behind Exo Ape is one of exploration, creativity and
-              curiosity.
+              The story behind Yoje is one of exploration, creativity,
+              curiosity and peace.
             </p>
             <a className="border-b-2 inline-block sm:hidden border-[#e0ccbb]" href="#">
               Our Story
@@ -30,7 +30,7 @@ const Story = () => {
             <div className="flex justify-between items-end">
               <div className="flex gap-28 sm:gap-32">
                 <ul className="space-y-2 max-sm:hidden">
-                  {["Willem II Singel 8", "6041 HS, Roermond", "The Netherlands", "gobinda993720@gmail.com"].map(item => (
+                  {["JIC Incubation Center", "JECRC Foundation", "Jaipur, Rajasthan", "yoje@yoje.tech"].map(item => (
                     <a
                       key={item}
                       className="block text-sm opacity-85"
@@ -64,7 +64,10 @@ const Story = () => {
                 </ul>
               </div>
 
-              <a className="border-b inline-block max-sm:hidden border-[#e0ccbb]" href="#">Our Story</a>
+              <div className="flex gap-3 items-center max-sm:hidden">
+                <a className="border-b inline-block border-[#e0ccbb]" href="#">Privacy Policy</a>
+                <a className="border-b inline-block border-[#e0ccbb]" href="#">Terms and Conditions</a>
+              </div>
             </div>
           </div>
         </div>
