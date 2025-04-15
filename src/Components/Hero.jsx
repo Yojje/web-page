@@ -61,23 +61,23 @@ const Hero = () => {
           </div> */}
 
 			<div className="headings mt-52 lg-mt-32 flex flex-col text-white tracking-tight font-gothic font-light sm-text-md text-[clamp(2rem,10vw,13rem)]">
-				<h1 className=" leading-10">Digital</h1>
-				<h1 className="leading-sung">Design</h1>
-				<h1 className="pb-2 leading-10">Experience</h1>
+				<h1 className=" leading-10">Health</h1>
+				<h1 className="leading-sung">Meets</h1>
+				<h1 className="pb-2 leading-10">Technology</h1>
 			</div>
 
           <div className="mt-20 sm:mt-32">
             <p className="font-medium text-lg sm:text-2xl sm:w-1/2 leading-[1.5rem]">
-              We help experience-driven companies thrive by making their
-              audience feel the refined intricacies of their brand and product
-              in the digital space. Unforgettable journeys start with a click.
+              We help people to find their beloved instructors,
+              in your own native language at your home.
+              Meet your instructor and start learning today.
             </p>
             <div className="flex justify-between items-center mt-5 sm:mt-20">
-              <a className="border-b sm:text-lg border-white inline-block" href="#" > The Studio </a>
+              <a className="border-b sm:text-lg border-white inline-block" href="#" > The Mission </a>
 
               <div className="flex gap-32 max-md:hidden font-medium">
                 <div className="space-y-3">
-                  {["Work", "Studio", "News", "Contact"].map(item => {
+                  {["Work", "App", "News", "Contact"].map(item => {
                     return (
                       <a
                         key={item}
@@ -90,7 +90,7 @@ const Hero = () => {
                   })}
                 </div>
                 <div className="space-y-3">
-                  {["atishaytuliiaf@gmail.com", "+44 007 1105 1012"].map(item => {
+                  {["yoje@yoje.tech"].map(item => {
                     return (
                       <a key={item} className="block text-md opacity-85" href="#" > 
                       {item}
