@@ -2,7 +2,7 @@ import React from "react";
 
 const Story = () => {
   return (
-    <div className="overflow-hidden h-screen bg-red-400">
+    <div className="overflow-hidden h-screen">
       <div
         data-scroll
         data-scroll-speed="-0.5"
@@ -24,7 +24,7 @@ const Story = () => {
 				<h1 className="text-8xl sm:text-[clamp(5rem,11vw,12rem)] sm:tracking-tighter">Story</h1>
             </div>
             <h4 className="font-gothic text-[clamp(.5rem,5vw,2rem)] sm:text-[clamp(0.5rem,1.75vw,1.75rem)] sm:opacity-90 sm:leading-4 md:leading-5 lg:leading-8 leading-3">
-              	The story behind Exo Ape is one of
+              	The story behind YOJE is a mix of
             </h4>
             <h4 className="font-gothic text-[clamp(.5rem,5vw,2rem)] sm:text-[clamp(0.5rem,1.75vw,1.75rem)] pb-10 sm:opacity-90 leading-6 lg:leading-6 sm:leading-3">
 				exploration, creativity and curiosity.
@@ -37,38 +37,38 @@ const Story = () => {
             </div>
             <div className="flex justify-between items-end pt-4 pb-10">
               <div className="flex gap-36 sm:gap-32">
-                <ul className="space-y-2 sm:space-y-2 max-sm:hidden">
+                <ul className="space-y-2 sm:space-y-3 max-sm:hidden">
                   {[
-                    "Yoje.tech",
-                    "JIC, SITAPURA",
+                    "JIC Incubation Center",
+                    "JECRC FOUNDATION",
                     "JAIPUR, RAJASTHAN",
-                    "support@yoje.tech",
+                    "contact@yoje.tech",
                   ].map((item) => (
                     <a
                       key={item}
-                      className="block text-sm sm:text-[clamp(.25rem,1.5vw,1.25rem)] opacity-85"
+                      className="block text-sm sm:text-[clamp(.25rem,1.5vw,1rem)] opacity-85"
                       href="#"
                     >
                       {item}
                     </a>
                   ))}
                 </ul>
-                <ul className="space-y-4 sm:space-y-2">
+                <ul className="space-y-4 sm:space-y-3">
                   {["Work", "Studio", "News", "contact"].map((item) => (
                     <a
                       key={item}
-                      className="block text-xl sm:text-sm opacity-85 capitalize"
+                      className="block text-sm sm:text-[clamp(.25rem,1.5vw,1rem)] opacity-85 capitalize"
                       href="#"
                     >
                       {item}
                     </a>
                   ))}
                 </ul>
-                <ul className="space-y-4 sm:space-y-2">
+                <ul className="space-y-4 sm:space-y-3">
                   {["Behance", "dribble", "twitter", "instagram"].map((item) => (
                     <a
                       key={item}
-                      className="block text-xl sm:text-sm opacity-85 capitalize"
+                      className="block text-sm sm:text-[clamp(.25rem,1.5vw,1rem)] opacity-85 capitalize"
                       href="#"
                     >
                       {item}

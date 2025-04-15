@@ -61,9 +61,9 @@ const Hero = () => {
 			</div> */}
 
 				<div className="headings mt-52 lg-mt-32 flex flex-col text-white tracking-tight font-medium font-gothic sm-text-md text-[clamp(2rem,16vw,10rem)]">
-					<h1 className="leading-10">Digital</h1>
-					<h1 className="leading-sung">Design</h1>
-					<h1 className="pb-2 leading-10">Experience</h1>
+					<h1 className="leading-10">Where</h1>
+					<h1 className="leading-sung">Health Meets</h1>
+					<h1 className="pb-2 leading-10">TECH</h1>
 				</div>
 
 				<div className="mt-14 sm:mt-28 px-4">
