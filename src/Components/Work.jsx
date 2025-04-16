@@ -39,10 +39,10 @@ const Work = () => {
   ];
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 sm:px-52 py-20">
+    <div className="max-w-screen-2xl mx-auto px-5 sm:px-[clamp(3rem,12vw,5rem)] py-20">
       <div className="featured flex items-center gap-3">
         <svg
-          className="size-3 sm:size-7"
+          className="size-[clamp(0.5rem,3vw,1rem)] sm:size-[clamp(1rem,5vw,1.5rem)]"
           viewBox="0 0 12 12"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const Work = () => {
         {elems.map((item) => (
           <div
             key={item.heading}
-            className="elem w-full sm:w-[48%] overflow-hidden mb-10"
+            className="elem w-full sm:w-full md:w-full lg:w-[48%] overflow-hidden mb-10"
           >
             <div className="video relative w-full h-[104vw] sm:h-[40vw] overflow-hidden">
               <motion.img

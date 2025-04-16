@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Gothic&display=swap');
 
+/* "https://a.storyblok.com/f/133769/1920x2716/5c24d6b467/exo-ape-hero-1.jpg/m/1920x2716/filters:format(webp):quality(30)" */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,3 +11,31 @@ body::-webkit-scrollbar {display: none;}
 .blurred-circle {
     transition: transform 0.1s ease-out;
 }
+
+/* Add these to your index.css */
+@layer utilities {
+    .transform-gpu {
+      transform: translateZ(0);
+    }
+    
+    .will-change-transform {
+      will-change: transform;
+    }
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    /* Reduce animation impact on mobile */
+    html, body {
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Force hardware acceleration for smoother animations */
+    .headings h1, 
+    .picture img,
+    [data-scroll] {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+  }
