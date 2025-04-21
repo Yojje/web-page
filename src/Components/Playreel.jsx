@@ -70,17 +70,16 @@ const Playreel = () => {
               fill="currentColor"
             ></path>
           </svg>
-          <h2 className="text-sm">Work in motion</h2>
+          <h2 className="text-sm">Our App in motion</h2>
         </div>
 
         <h2 className="w-full flex items-center justify-center gap-32 sm:gap-[42%]">
-          <div className="text-6xl sm:text-9xl">Play</div>
-          <div className="text-6xl sm:text-9xl">Reel</div>
+          <div className="text-6xl sm:text-9xl">Discover Your</div>
+          <div className="text-6xl sm:text-9xl">Inner Self</div>
         </h2>
 
         <p className="text-center text-sm">
-          Our work is best experienced in motion. Don’t <br /> forget to put on your
-          headphones.
+          Our work is best experienced in Practical. Don’t <br /> forget to take your shoes off. 😉
         </p>
       </div>
     </div>

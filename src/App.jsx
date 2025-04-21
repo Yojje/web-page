@@ -7,7 +7,7 @@ import Images from "./Components/Images";
 import Spread from "./Spread";
 import Story from "./Components/Story";
 import LocomotiveScroll from "locomotive-scroll";
-import BlurredCircle from "./Components/BlurredCircle";
+// import BlurredCircle from "./Components/BlurredCircle";
 
 const App = () => {
   useEffect(() => {
@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div>
-      <BlurredCircle/>
+      {/* <BlurredCircle/> */}
       <Navbar />
       <Hero />
       <Work />
