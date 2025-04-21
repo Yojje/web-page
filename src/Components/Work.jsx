@@ -1,112 +1,123 @@
 import { motion } from "framer-motion";
 import { Power4 } from "gsap/all";
-import React, { useRef, useState } from "react";
+import React from "react";
+import { light } from "../styles/Themes"; // Import the theme
 
 const Work = () => {
-  const elems = [
+  // Replace with your app features/sections
+  const appFeatures = [
     {
-      heading: "Studio D",
-      subHeading: "Urban and Landscape Design",
-      video:
-        "https://player.vimeo.com/progressive_redirect/playback/914798702/rendition/720p/file.mp4?loc=external&log_user=0&signature=b76cb0994de6beca7f6ba29e7eb52db1750d34600352dab2566c6ca16fcd817f",
-      image:
-        "https://a.storyblok.com/f/133769/2409x3000/b5ccf4619b/studio-d-hero.jpg/m/1300x1619/filters:format(webp):quality(70)",
+      heading: "Find and chat with Instructors",
+      subHeading: "Search by name, location, language & style",
+      image: "/app-screenshots/find-instructors.png",
+      description: "Our intelligent matching system helps you find yoga instructors who speak your language and teach in your preferred style, all within your local area. Moreover, you can chat with them directly through the app to discuss your needs and preferences.",
+      gradient: light.mainGradient // Using the primary gradient
     },
     {
-      heading: "Rino & Pelle",
-      subHeading: "Effortless chic lifestyle",
-      video:
-        "https://player.vimeo.com/progressive_redirect/playback/914798484/rendition/720p/file.mp4?loc=external&log_user=0&signature=666d8099e0f1361eb1766ec0592b63a9bdf2b303cdb12ddfa5789d20ce8f523b",
-      image:
-        "https://a.storyblok.com/f/133769/2500x3113/78edf86efd/rino-pelle-hero.jpg/m/1300x1619/filters:format(webp):quality(70)",
+      heading: "Can't find your instructor?",
+      subHeading: "Practice with our AI instructor for FREE or See our free pre-recorded class video library that fits your needs and that to for FREE.",
+      image: "/app-screenshots/community.jpg",
+      description: "Our AI instructor is available 24/7 to guide you through your practice. You can also access a library of pre-recorded classes tailored to various styles and levels.",
+      gradient: light.gradientSecondary // Using the overlay gradient
     },
     {
-      heading: "Aebele Interiors",
-      subHeading: "Luxurious design experience",
-      video:
-        "https://player.vimeo.com/progressive_redirect/playback/914796979/rendition/540p/file.mp4?loc=external&log_user=0&signature=57ac30ff6fc3b29802f7414617e808395306f0b0fa5c9c6e3ef483a532f49c15",
-      image:
-        "https://a.storyblok.com/f/133769/1606x2000/09a30057bd/aebele-interiors-hero.jpg/m/1300x1619/filters:format(webp):quality(70)",
+      heading: "Book Sessions/ Demo Classes",
+      subHeading: "Schedule classes that fit your routine",
+      image: "/app-screenshots/book-sessions.png",
+      description: "Seamlessly book private or group sessions that fit your schedule. Choose between in-person or virtual classes with just a few taps.",
+      gradient: light.mainGradient // Using the secondary gradient
     },
     {
-      heading: "Pixelflakes",
-      subHeading: "Architectural marketing agency",
-      video:
-        "https://player.vimeo.com/progressive_redirect/playback/914798271/rendition/720p/file.mp4?loc=external&log_user=0&signature=2af493277d050009920c26416a8d62a9a8c316353242c609ee157fcf1e300076",
-      image:
-        "https://a.storyblok.com/f/133769/2880x3588/5c50befb8e/pixel-flakes-hero.jpg/m/1300x1620/filters:format(webp):quality(70)",
+      heading: "AI-Powered Posture Correction",
+      subHeading: "Get real-time feedback on your posture and alignment for FREE.", 
+      image: "/app-screenshots/track-progress.jpg",
+      description: "Utilize our AI technology to receive real-time feedback on your yoga postures. Our app analyzes your movements and provides personalized tips to enhance your practice.",
+      gradient: light.mainGradient // Using the main gradient
     },
+    {
+      heading: "Join or create your own Community",
+      subHeading: "Connect with like-minded practitioners and instructors",
+      image: "/app-screenshots/community.jpg",
+      description: "Join our thriving community of yoga enthusiasts, share experiences, and participate in challenges to deepen your practice together. You can also create your own community to connect with others who share your interests.",
+      gradient: light.gradientSecondary // Using the overlay gradient
+    },
+    
   ];
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 sm:px-[clamp(3rem,12vw,5rem)] py-20">
-      <div className="featured flex items-center gap-3">
+    <div 
+      className="max-w-screen-2xl mx-auto px-5 sm:px-[clamp(3rem,12vw,5rem)] py-10"
+      // style={{ background: light.mainGradient }} // Apply main gradient to the container
+    >
+      <div className="featured flex items-center gap-3 mb-2">
         <svg
           className="size-[clamp(0.5rem,3vw,1rem)] sm:size-[clamp(1rem,5vw,1.5rem)]"
           viewBox="0 0 12 12"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"
-            fill="currentColor"
-          ></path>
         </svg>
-        <h2 className="capitalize font-semibold text-sm sm:text-3xl">
-          featured projects
-        </h2>
       </div>
 
-      <h2 className="text-7xl sm:text-[14rem] tracking-tight my-5 overflow-hidden">
+      <h2 className="text-2xl sm:text-[7rem] tracking-tight mt-2 mb-16 sm:mb-24 overflow-visible">
         <motion.span
-          initial={{ y: "90%", rotate: 30 }}
+          initial={{ y: "70%", rotate: 10 }} 
           whileInView={{ y: "0", rotate: 0 }}
-          viewport={{ once: true }}
-          transition={{ ease: Power4.inOut, duration: 0.5 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ ease: Power4.inOut, duration: 0.7 }}
           className="inline-block origin-left"
         >
-          Work
+          Why us?
         </motion.span>
       </h2>
-      <p className="text-lg leading-[1.5rem] sm:text-xl sm:w-2/3 sm:opacity-40">
-        Highlights of cases that we passionately built with forward-thinking
-        clients and friends over the years.
+
+      {/* Clear margin to prevent overlap */}
+      <div className="clear-both"></div>
+      
+      <p className="text-lg leading-[1.5rem] sm:text-xl sm:w-2/3 sm:opacity-80 mb-12">
+        Our app connects yoga enthusiasts with specialized instructors who speak your language, 
+        understand your goals, and adapt to your learning style.
       </p>
 
-      <div className="elems w-full mt-8 sm:flex sm:flex-wrap sm:justify-between">
-        {elems.map((item) => (
-          <div
-            key={item.heading}
-            className="elem w-full sm:w-full md:w-full lg:w-[48%] overflow-hidden mb-10"
+      {/* Features grid with alternating layout */}
+      <div className="app-features space-y-24">
+        {appFeatures.map((feature, index) => (
+          <div 
+            key={feature.heading}
+            className={`feature-row flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center rounded-2xl p-6 sm:p-10`}
+            style={{ background: feature.gradient }} // Apply the gradient from the feature object
           >
-            <div className="video relative w-full h-[104vw] sm:h-[40vw] overflow-hidden">
-              <motion.img
-                whileHover={{ opacity: 0 }}
-                transition={{ ease: "linear", duration: 0.1 }}
-                data-scroll
-                data-scroll-speed="-0.2"
-                className="absolute max-sm:hidden z-[2] w-full h-full object-cover"
-                src={item.image}
-              />
-              <motion.video
-                data-scroll
-                data-scroll-speed="-0.2"
-                className="w-full h-full object-cover"
-                src={item.video}
-                autoPlay
-                muted
-                loop
-              ></motion.video>
+            {/* App screenshot */}
+            <div className="feature-image w-full lg:w-1/5 flex items-center justify-center">
+              <motion.div
+                className="overflow-hidden rounded-xl shadow-lg w-full max-w-sm mx-auto" // Reduced max-width to max-w-sm
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-5%" }}
+              >
+                <img 
+                  src={feature.image} 
+                  alt={feature.heading}
+                  className="w-full h-auto object-contain" // Changed to object-contain and removed max-height
+                />
+              </motion.div>
             </div>
-
-            <div className="description mt-3 sm:flex sm:items-center sm:gap-1">
-              <h1 className="capitalize font-medium sm:text-sm">
-                {item.heading}
-              </h1>
-              <p className="hidden sm:block font-extrabold">–</p>
-              <p className="capitalize text-sm opacity-60 sm:opacity-80 sm:text-xs">
-                {item.subHeading}
-              </p>
+            
+            {/* Feature description */}
+            <div className="feature-content w-full lg:w-1/2">
+              <motion.div
+                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true, margin: "-5%" }}
+              >
+                <h3 className="text-2xl sm:text-4xl font-medium mb-2">{feature.heading}</h3>
+                <p className="text-base sm:text-lg opacity-75 mb-4">{feature.subHeading}</p>
+                <p className="text-base sm:text-lg leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
             </div>
           </div>
         ))}
